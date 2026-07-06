@@ -14,7 +14,7 @@ Q: My computer is asking me what to open this file with, what do I click?
 A: Click "Python", it has a black background with a blue and yellow snake icon.
 
 Q: How do I run this on Linux?
-A: Navigate to where you have downloaded the file with the command "cd <folder name>" then run "python Main.py".
+A: Navigate to where you have downloaded the file with the command "cd <folder name>" then run "python3 Main.py".
 
 Q: The terminal doesn't seem to be doing anything, it's paused.
 A: Don't type or click anything, this just means it is processing in the background.
@@ -44,7 +44,7 @@ Q: The program crashes when I run it.
 A: For Windows and Mac, open it with IDLE (search IDLE on your system, press CTRL+O, and click main.py). Run it exactly how you did before, then copy and send me the error on Discord @starcrestmc or email me at admin@starcrestmc.net.
 
 Q: I get the error "Incorrect Password" 
-A: This means you typed your master or friend's password wrong.
+A: This means you typed your friend's password wrong.
 
 Q: I get the error "<friendsname>'s vault is corrupt, please regenerate"
 A: This means the shared password list between you and your friend is either not the same as the other person's or is corrupt. Please delete the file, select option 2 to generate a new list, share it with that friend, then re-encrypt it with option 3.
@@ -65,21 +65,10 @@ A: This means your friend made a message but didn't send it to you (so their pas
 LOST PASSWORDS & NUMBERS
 ------------------------------------------------------------------------------------
 
-Q: Do I really need to note down the master password?
-A: Yes, if you lose or forget it there is absolutely no way of recovering it.
-
-Q: Help! I've lost/forgotten my master password 
-A: This cannot be recovered. Tell your friends whose lists you have, to delete the shared password list they had with you, as it is now useless. Then, follow these steps:
-   1. Delete master.json (located inside the Vault folder).
-   2. Delete any and all password lists you had.
-   3. Generate a new friend's shared file (1 per friend) and share these.
-   4. Select option 3 to re-encrypt the new files you made, note down the numbers, and tell your friends to do the same.
-
 Q: Help! I've lost/forgotten the number for my friend's shared password list
 A: You can no longer use this list. Delete that list and tell whoever you shared it with to also delete it. Then:
    1. Select option 2 to generate a new shared password list.
    2. Share this new list with your friend.
-   3. Encrypt this file (option 3) on your PC and tell them to do the same on theirs.
 
 ------------------------------------------------------------------------------------
 SUPPORT
