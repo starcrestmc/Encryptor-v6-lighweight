@@ -1,0 +1,88 @@
+====================================================================================
+TROUBLESHOOTING GUIDE
+====================================================================================
+
+Key:
+Q = Question
+A = Answer
+
+------------------------------------------------------------------------------------
+INSTALLATION & RUNNING
+------------------------------------------------------------------------------------
+
+Q: My computer is asking me what to open this file with, what do I click?
+A: Click "Python", it has a black background with a blue and yellow snake icon.
+
+Q: How do I run this on Linux?
+A: Navigate to where you have downloaded the file with the command "cd <folder name>" then run "python Main.py".
+
+Q: The terminal doesn't seem to be doing anything, it's paused.
+A: Don't type or click anything, this just means it is processing in the background.
+
+------------------------------------------------------------------------------------
+WARNINGS & LOGS (RED TEXT)
+------------------------------------------------------------------------------------
+
+Q: Red text appears at the top when I run it saying "[nltk_data] Downloading package brown to.."
+A: Don't worry, this is normal behavior and is just Python loading the dictionary to generate passwords. This is not an error.
+
+Q: Red text appears saying "DeprecationWarning: imghdr was removed in Python 3.13. Please be aware that you are currently NOT using standard 'imghdr', but instead a separately installed 'standard-imghdr'."
+A: This is because the script uses an old module called imghdr which no longer exists. This is a standard warning letting you know you're using a separately downloaded version called "standard-imghdr" and it is not an error.
+
+------------------------------------------------------------------------------------
+PGP & KEY SETUP
+------------------------------------------------------------------------------------
+
+Q: I get a message saying "Your PGP Fingerprint is:" when I first run the program, what is this?
+A: This is a unique ID for your PGP keypair (private.asc and public.asc files). It is only used if there is an error to ensure the key you gave your friend hasn't been changed since you gave it to them. Please note this down.
+
+------------------------------------------------------------------------------------
+ERRORS & CRASHES
+------------------------------------------------------------------------------------
+
+Q: The program crashes when I run it.
+A: For Windows and Mac, open it with IDLE (search IDLE on your system, press CTRL+O, and click main.py). Run it exactly how you did before, then copy and send me the error on Discord @starcrestmc or email me at admin@starcrestmc.net.
+
+Q: I get the error "Incorrect Password" 
+A: This means you typed your master or friend's password wrong.
+
+Q: I get the error "<friendsname>'s vault is corrupt, please regenerate"
+A: This means the shared password list between you and your friend is either not the same as the other person's or is corrupt. Please delete the file, select option 2 to generate a new list, share it with that friend, then re-encrypt it with option 3.
+
+Q: I get the error "Ciphertext is corrupt or Incorrect Sender was used!"
+A: This means either the message your friend sent you isn't the entire message, or you selected the wrong person's PGP key or password list.
+
+Q: I get the error "Message is corrupt or Incorrect PGP key used"
+A: This means either your message is malformed, you selected the wrong PGP key, or your PGP key is corrupt. If it is corrupt, delete the PGP keys (private.asc and public.asc) and regenerate them by re-running the script.
+
+Q: I get the error "Password Sync Mismatch"
+A: This means your friend made a message but didn't send it to you (so their password list is shorter than yours), or you made a message but didn't send it (so yours is shorter). Please do the following:
+   1. Delete the shared password list.
+   2. Regenerate it with option 2.
+   3. Re-encrypt it with option 3.
+
+------------------------------------------------------------------------------------
+LOST PASSWORDS & NUMBERS
+------------------------------------------------------------------------------------
+
+Q: Do I really need to note down the master password?
+A: Yes, if you lose or forget it there is absolutely no way of recovering it.
+
+Q: Help! I've lost/forgotten my master password 
+A: This cannot be recovered. Tell your friends whose lists you have, to delete the shared password list they had with you, as it is now useless. Then, follow these steps:
+   1. Delete master.json (located inside the Vault folder).
+   2. Delete any and all password lists you had.
+   3. Generate a new friend's shared file (1 per friend) and share these.
+   4. Select option 3 to re-encrypt the new files you made, note down the numbers, and tell your friends to do the same.
+
+Q: Help! I've lost/forgotten the number for my friend's shared password list
+A: You can no longer use this list. Delete that list and tell whoever you shared it with to also delete it. Then:
+   1. Select option 2 to generate a new shared password list.
+   2. Share this new list with your friend.
+   3. Encrypt this file (option 3) on your PC and tell them to do the same on theirs.
+
+------------------------------------------------------------------------------------
+SUPPORT
+------------------------------------------------------------------------------------
+
+Is there a problem I have missed or haven't listed here? Contact me at admin@starcrestmc.net or via Discord at @starcrestmc and I will be happy to help!

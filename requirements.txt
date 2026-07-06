@@ -1,0 +1,4 @@
+nltk
+cryptography
+pgpy
+standard-imghdr

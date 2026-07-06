@@ -1,0 +1,178 @@
+====================================================================================
+ENCRYPTOR V6 - USER INSTRUCTIONS
+====================================================================================
+Original tool by StarcrestMC
+Credits: Freddie W.
+
+CONTACT & SUPPORT:
+- Email: admin@starcrestmc.net
+- Discord: @starcrestmc
+- Instagram: @starcrest_mc
+- GitHub: https://github.com/starcrestmc/Encryptor-v6/
+
+------------------------------------------------------------------------------------
+PRE-RUN CHECKLIST
+------------------------------------------------------------------------------------
+
+Before running the program, please verify the following:
+
+1. CHECKSUM VERIFICATION:
+   Ensure your downloaded ZIP file matches the SHA256 hash listed at:
+   https://www.geocities.ws/coffeecity/checksum.txt
+   If it does not match, re-download the tool from GitHub.
+
+2. FOLDER REQUIREMENTS:
+   - A folder named "Vault" containing the file "BLANK.json".
+   - An empty folder named "PGPKeys".
+   - A folder named "EXTRAMODULES".
+
+3. FILE REQUIREMENTS:
+   - The files "aj.pkl", "av.pkl", "n.pkl", and "v.pkl" must exist. 
+     [CRITICAL: Do not delete any .pkl files or the program will not work!]
+
+4. SYSTEM REQUIREMENTS:
+   - Python 3.14 or later must be installed on your computer.
+
+------------------------------------------------------------------------------------
+FILE & FOLDER SUMMARY
+------------------------------------------------------------------------------------
+
+* Main.py               - The core encryptor application.
+* requirements.txt      - List of required Python modules (auto-installs if missing).
+* Troubleshooting.txt   - Refer to this file verbatim if you encounter issues.
+* LICENSE-CC-BY-NC-ND   - Creative Commons license governing project usage.
+* Shortcuts (.html)     - Direct links to official Python downloads and documentation.
+
+* EXTRAMODULES/         - Contains essential custom libraries (PGPmsg.py, pre.py).
+* Vault/                - Stores your Master password list and shared friend lists.
+* PGPKeys/              - Stores your cryptographic PGP keys and your friends' keys.
+
+[NOTE: public.asc, private.asc, and Master.json are generated on your first run.
+ Do not panic if they are not in your folder yet!]
+
+--- SAFE TO DELETE ---
+You can safely delete "robots.txt", ".github/ISSUE_TEMPLATE", and 
+"CODE_OF_CONDUCT.md" if desired. They are only used for the GitHub repository.
+
+------------------------------------------------------------------------------------
+HOW TO INTERPRET MENU OPTIONS
+------------------------------------------------------------------------------------
+
+Menu choices or prompt settings are enclosed in square brackets [].
+Example: "Would you like to install the Requirements? [Y]es/[N]o"
+To respond, type Y for yes or N for no (inputs are NOT case-sensitive).
+
+------------------------------------------------------------------------------------
+INITIAL SHARING INSTRUCTIONS (SETTING UP WITH FRIEND #1)
+------------------------------------------------------------------------------------
+
+To use this program securely, you and your friend must link your files. Follow 
+these exact steps in order:
+
+PART 1: GENERATION
+1. Run Main.py and select Option 1 to generate your master files.
+2. Select Option 2 to generate a joint file for you and your friend.
+   [CRITICAL: DO NOT ENCRYPT THIS FILE YET!]
+
+PART 2: EXCHANGING THE VAULT
+3. Go into your "Vault" folder, locate the newly generated file, and send it 
+   to your friend.
+4. Your friend must download your file, place it in their "Vault" folder, and 
+   rename it to YOUR name. 
+   (Result: You have a file named after them; they have a file named after you.)
+
+PART 3: ENCRYPTION & PASSWORDS
+5. Your friend must now run Main.py on their computer to generate their own 
+   master file (their master file password must be different from yours).
+6. Both of you must independently think of a secret reference number from 1 to 1000.
+   [WARNING: DO NOT share this number with each other. It must be different!]
+7. Both of you select Option 3, choose the "F" option, and enter your secret number 
+   when prompted. Write this number down on a physical piece of paper. Keep it safe!
+8. Create your Master Vault password when prompted. 
+   [WARNING: DO NOT LOSE THIS PASSWORD. IT CANNOT BE RECOVERED.]
+9. Your files are now encrypted. Next time you run the tool, you will need your 
+   Master Vault password to unlock it.
+
+PART 4: EXCHANGING PGP KEYS
+10. Open your "PGPKeys" folder. You will see "public.asc" and "private.asc".
+    [CRITICAL SECURITY WARNING: NEVER SHARE YOUR PRIVATE.ASC FILE WITH ANYONE!]
+11. Make a copy of "public.asc" inside that folder, and rename the copy to 
+    "<YourName>.asc". Send this renamed file to your friend.
+12. Your friend must do the same with their public key and send it to you.
+13. Put your friend's ".asc" file directly into your "PGPKeys" folder.
+14. Setup complete! You can now use the encryptor.
+
+------------------------------------------------------------------------------------
+ADDING EXTRA FRIENDS (SIMPLIFIED PROCESS)
+------------------------------------------------------------------------------------
+
+If you are already set up and want to add a second or third friend:
+1. Your new friend must run Option 1 on their PC to create their master file.
+2. On your PC, select Option 3, enter "f", and then choose "y" (confirming your 
+   Master Vault is already encrypted).
+3. Enter your Master Vault password and create the new friend's file like before.
+4. Copy that new file, rename the copy to your name, and send it to your friend. 
+   Delete the renamed copy from your folder once sent.
+5. Your friend must then follow the standard setup to encrypt their files, 
+   starting with their Master Vault and moving to the friend vault.
+6. Swap renamed "public.asc" keys with this new friend and place them in your 
+   respective PGPKeys folders.
+
+------------------------------------------------------------------------------------
+USAGE INSTRUCTIONS: SENDING A MESSAGE
+------------------------------------------------------------------------------------
+
+1. Select Option 4 from the main menu.
+2. Enter your Master Vault password to unlock your files.
+3. Enter the name of your friend's .json file (exactly as it appears in "Vault", 
+   but without typing ".json").
+4. Enter the secret reference number (1-1000) you chose for them during setup.
+5. Type out your message when prompted. The terminal will display the current 
+   length of your shared password list.
+6. Enter the name of your friend's PGP key file (without typing ".asc").
+7. The program will encrypt the text and generate a message hidden in a custom font
+   enclosed between a ">" and a "<".
+8. Copy everything starting AFTER the ">" up to BEFORE the "<". Send this 
+   copied text to your friend.
+
+------------------------------------------------------------------------------------
+USAGE INSTRUCTIONS: RECEIVING A MESSAGE
+------------------------------------------------------------------------------------
+
+1. Select Option 5 from the main menu.
+2. Enter your Master Vault password.
+3. Enter the name of the sender's .json file (without the ".json" extension).
+4. Enter the secret reference number (1-1000) you assigned to this friend.
+5. Enter your friend's public key name (without the ".asc" extension).
+6. The program will verify that the message hasn't been tampered with and was 
+   authentically sent by them. If successful, their decrypted message will display.
+
+[TROUBLESHOOTING SYNC MISMATCHES]
+If you receive a "Password Sync Mismatch" error, copy the hash and its index 
+position provided by the program and give it to your friend. Your friend must hash 
+the password at that exact index. If it doesn't match yours, YOU (not your friend) 
+must delete that number in your file to realign and balance the lists.
+
+====================================================================================
+GLOSSARY
+====================================================================================
+
+* HTML (HyperText Markup Language): The code used to build websites. These files 
+  can be viewed in any browser or edited in a text editor.
+
+* PGP (Pretty Good Privacy): A cryptographic method using a keypair. It utilizes 
+  your private key to encrypt/sign files and your public key to decrypt/verify them.
+
+* JSON (JavaScript Object Notation): A clean, human-readable file format used to 
+  store lists and assign meanings to data values.
+
+* PKL (Pickle): A specialized Python file format used to compress and rapidly 
+  access word dictionaries ("pickle" module).
+
+* SHA256 Hash: A unique, mathematical string of characters that represents a 
+  file's exact contents. Used to verify a file hasn't been altered or corrupted.
+
+* Encryption: The process of scrambling information to make it completely 
+  unreadable to anyone who does not possess the correct password or key.
+
+* Python: The programming language and environment that runs this entire system!
